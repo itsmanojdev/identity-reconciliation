@@ -2,8 +2,13 @@
   "name": "identity-reconciliation",
   "version": "1.0.0",
   "scripts": {
+    "dev": "tsx --watch ./src/server.ts",
+    "start": "node ./dist/server.js",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itsmanojdev/identity-reconciliation.git"
@@ -19,6 +24,7 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.2.1",
+    "tsx": "^4.20.4",
     "typescript": "^5.9.2"
   },
   "dependencies": {
