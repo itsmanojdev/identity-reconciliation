@@ -1,5 +1,8 @@
 import express from "express";
 import contactRouters from "./routes/contact.js";
+import dotenv from 'dotenv'
+
+dotenv.config({ path: '/backend/.env' })
 
 const port = process.env.PORT ?? 3000;
 
