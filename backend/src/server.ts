@@ -1,9 +1,12 @@
 import express from "express";
 import contactRouters from "./routes/contact.js";
 
+const port = process.env.PORT ?? 3000;
+
 const app = express();
 
-const port = process.env.PORT ?? 3000;
+/* Middlewares */
+app.use(express.json());
 
 /* Routers */
 app.use("/", contactRouters);
