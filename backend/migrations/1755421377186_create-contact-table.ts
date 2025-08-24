@@ -1,4 +1,4 @@
-import { MigrationBuilder } from 'node-pg-migrate';
+import { MigrationBuilder } from "node-pg-migrate";
 
 /**
  * @param pgm {import('node-pg-migrate').MigrationBuilder}
@@ -6,38 +6,37 @@ import { MigrationBuilder } from 'node-pg-migrate';
  * @returns {Promise<void> | void}
  */
 export const up = (pgm: MigrationBuilder): Promise<void> | void => {
-
     // Type for Link Precedence
-    pgm.createType('link_precedence', ['primary', 'secondary']);
+    pgm.createType("link_precedence", ["primary", "secondary"]);
 
-    pgm.createTable('contact', {
-        id: 'id',
-        phoneNumber: 'varchar(255)',
-        email: 'varchar(255)',
+    pgm.createTable("contact", {
+        id: "id",
+        phoneNumber: "varchar(255)",
+        email: "varchar(255)",
         linkedId: {
-            type: 'integer',
-            references: 'contact',
-            onDelete: 'SET NULL'
+            type: "integer",
+            references: "contact",
+            onDelete: "CASCADE",
         },
         linkPrecedence: {
-            type: 'link_precedence',
-            default: 'primary'
+            type: "link_precedence",
+            default: "primary",
         },
         createdAt: {
-            type: 'timestamp',
+            type: "timestamp",
             notNull: true,
-            default: pgm.func('current_timestamp')
+            default: pgm.func("current_timestamp"),
         },
         updatedAt: {
-            type: 'timestamp',
+            type: "timestamp",
             notNull: true,
-            default: pgm.func('current_timestamp')
+            default: pgm.func("current_timestamp"),
         },
-        deletedAt: 'timestamp'
+        deletedAt: "timestamp",
     });
 
-    pgm.addConstraint('contact', 'unique_phone_or_email', {
-        unique: ['phoneNumber', 'email']
+    pgm.addConstraint("contact", "unique_phone_or_email", {
+        unique: ["phoneNumber", "email"],
     });
 };
 
@@ -47,11 +46,11 @@ export const up = (pgm: MigrationBuilder): Promise<void> | void => {
  * @returns {Promise<void> | void}
  */
 export const down = (pgm: MigrationBuilder): Promise<void> | void => {
-    pgm.dropTable('contact', {
-        ifExists: true
-    })
+    pgm.dropTable("contact", {
+        ifExists: true,
+    });
 
-    pgm.dropType('link_precedence', {
-        ifExists: true
+    pgm.dropType("link_precedence", {
+        ifExists: true,
     });
 };

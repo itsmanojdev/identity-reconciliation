@@ -6,6 +6,7 @@
     "start": "node ./dist/server.js",
     "build": "tsc",
     "migrate": "node-pg-migrate -j ts",
+    "seed": "tsx ./db/seed.ts",
     "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
