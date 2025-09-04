@@ -1,4 +1,9 @@
-#node modules
+#Node Modules
 node_modules
 
+#Build Files
+dist
+
+#Environment Variables
 .env
+
