@@ -19,4 +19,4 @@ interface Contact extends NewContact {
     deletedAt: string | null;
 }
 
-export { ContactRequestBody, NewContact, Contact, LinkPrecedence };
+export type { ContactRequestBody, NewContact, Contact, LinkPrecedence };
