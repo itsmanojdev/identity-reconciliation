@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Identity Reconciliation",
   "scripts": {
+    "dev": "tsx --watch ./src/server.ts",
+    "start": "node ./dist/server.js",
+    "build": "tsc",
+    "migrate": "node-pg-migrate -j ts",
+    "seed": "tsx ./db/seed.ts",
+    "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
@@ -10,7 +16,8 @@
     "type": "git",
     "url": "git+https://github.com/itsmanojdev/identity-reconciliation.git"
   },
-  "author": "",
+  "keywords": [],
+  "author": "Manoj Kumar T S",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^17.2.2",
