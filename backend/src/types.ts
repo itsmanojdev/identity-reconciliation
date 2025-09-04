@@ -1,6 +1,22 @@
+type LinkPrecedence = "primary" | "secondary";
+
 interface ContactRequestBody {
     phoneNumber: string | null;
     email: string | null;
 }
 
-export { ContactRequestBody };
+interface NewContact {
+    phoneNumber: string | null;
+    email: string | null;
+    linkedId: number | null;
+    linkPrecedence: LinkPrecedence;
+}
+
+interface Contact extends NewContact {
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt: string | null;
+}
+
+export { ContactRequestBody, NewContact, Contact, LinkPrecedence };
