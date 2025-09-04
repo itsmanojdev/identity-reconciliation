@@ -26,4 +26,12 @@ const queryBuilderWithNullCond = (
     return { query, values };
 };
 
-export { queryBuilderWithNullCond };
+const normalizeEmail = (email: string) => {
+    return email.toLowerCase().trim();
+};
+
+const normalizePhoneNo = (phoneNo: string) => {
+    return phoneNo.trim().replace(/^0+/, "");
+};
+
+export { queryBuilderWithNullCond, normalizeEmail, normalizePhoneNo };
