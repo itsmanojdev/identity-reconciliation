@@ -7,6 +7,8 @@ The service consolidates multiple email/phone records of the same customer into 
 
 ## Hosted URL for Live Demo
 
+🔗 **Live Demo:** [Identity Reconciliation](https://identity-reconciliation-61rd.onrender.com/)  
+
 ### https://identity-reconciliation-61rd.onrender.com/
 
 > See API Specification below for API Endpoint details 
@@ -98,8 +100,8 @@ Always return a consolidated response with **all emails, phone numbers, and seco
 
 ```bash
 # 1. Clone repo
-git clone https://github.com/your-username/fluxkart-identity-service.git
-cd fluxkart-identity-service
+git clone https://github.com/itsmanojdev/identity-reconciliation.git
+cd identity-reconciliation
 
 # 2. Install dependencies
 npm install
